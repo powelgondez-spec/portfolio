@@ -1,716 +1,1351 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>
-    document.documentElement.classList.add('js');
-    // Failsafe: kalau script.js gagal dimuat, konten tetap terlihat.
-    setTimeout(function () {
-      if (!window.__revealReady) document.documentElement.classList.remove('js');
-    }, 2000);
-  </script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NgePS â€” Rental PS4 &amp; PS5 Jakarta | Buka 24 Jam</title>
+<meta name="description" content="Rental PS4 & PS5 di Jakarta Selatan. Ruang ber-AC, sofa empuk, 50+ game terbaru, buka 24 jam. Booking cepat lewat WhatsApp, mulai Rp15rb/jam." />
+<meta name="theme-color" content="#07080d" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c9ff4d'/%3E%3Cpath d='M10 11h12a5 5 0 0 1 4.9 4l1 5.5a3 3 0 0 1-5.2 2.4L20.5 21h-9l-2.2 1.9a3 3 0 0 1-5.2-2.4l1-5.5A5 5 0 0 1 10 11Z' fill='none' stroke='%23090b10' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="NgePS â€” Rental PS4 & PS5 Jakarta" />
+<meta property="og:description" content="Mabar seru, harga tetap santai. Ruang ber-AC, PS5 4K, 50+ game. Buka 24 jam." />
 
-  <meta name="author" content="Andreas Powel Sinaga">
-  <meta name="description" content="Jasa pembuatan landing page dan website UMKM yang cepat, responsif, dan diarahkan agar pengunjung langsung menghubungi Anda. Konsultasi awal gratis.">
-  <meta name="theme-color" content="#0f9f6e">
+<!--
+  ============================================================
+  PANDUAN EDIT CEPAT
+  1. Nomor WhatsApp  -> cari "WA_NUMBER" di bagian script paling bawah
+  2. Alamat & jam    -> cari "ALAMAT" dan "JAM BUKA" di section Lokasi
+  3. Harga           -> cari "const PRICES" di bagian script
+  4. Foto galeri     -> ganti blok div.photo dengan tag img berisi foto asli
+  5. Nama brand      -> cari kata "NgePS" (logo, footer, meta)
+  ============================================================
+-->
 
-  <title>Andreas Powel Sinaga — Jasa Pembuatan Website untuk UMKM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="id_ID">
-  <meta property="og:site_name" content="Andreas Powel Sinaga">
-  <meta property="og:title" content="Andreas Powel Sinaga — Jasa Pembuatan Website untuk UMKM">
-  <meta property="og:description" content="Landing page dan website UMKM yang rapi, cepat, dan fokus mengarahkan pengunjung ke WhatsApp. Konsultasi awal gratis.">
-  <meta property="og:url" content="https://powelgondez-spec.github.io/portfolio/">
-  <meta property="og:image" content="https://powelgondez-spec.github.io/portfolio/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Andreas Powel Sinaga — jasa pembuatan website untuk UMKM">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Andreas Powel Sinaga — Jasa Pembuatan Website untuk UMKM">
-  <meta name="twitter:description" content="Landing page dan website UMKM yang rapi, cepat, dan fokus mengarahkan pengunjung ke WhatsApp.">
-  <meta name="twitter:image" content="https://powelgondez-spec.github.io/portfolio/og-image.png">
-
-  <link rel="canonical" href="https://powelgondez-spec.github.io/portfolio/">
-
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230f9f6e'/%3E%3Ctext x='50' y='71' font-family='Arial,sans-serif' font-size='54' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Andreas Powel Sinaga",
-    "description": "Jasa pembuatan landing page dan website UMKM yang cepat, responsif, dan fokus pada konversi.",
-    "url": "https://powelgondez-spec.github.io/portfolio/",
-    "image": "https://powelgondez-spec.github.io/portfolio/og-image.png",
-    "areaServed": "ID",
-    "telephone": "+6287789734353",
-    "sameAs": ["https://github.com/powelgondez-spec"],
-    "knowsAbout": ["Web Development", "HTML", "CSS", "JavaScript", "Landing Page"]
+<style>
+  :root{
+    --bg:#07080d;
+    --bg-2:#0b0d15;
+    --panel:#0f121c;
+    --panel-2:#141827;
+    --text:#f1f4fa;
+    --muted:#98a2ba;
+    --line:rgba(255,255,255,.08);
+    --line-strong:rgba(255,255,255,.16);
+    --lime:#c9ff4d;
+    --blue:#4f8cff;
+    --violet:#8b5cf6;
+    --pink:#ff5c8a;
+    --wrap:1160px;
+    --r:18px;
   }
-  </script>
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:92px;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--lime);color:#0a0b10}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  h1,h2,h3,h4{font-family:"Outfit","Inter",sans-serif;letter-spacing:-.03em;line-height:1.08;margin:0;font-weight:700}
+  p{margin:0}
+  .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  :focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:6px}
+
+  /* page ambience */
+  .page-glow{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+  .page-glow span{position:absolute;border-radius:50%;filter:blur(110px);opacity:.5}
+  .page-glow .g1{width:620px;height:620px;top:-300px;left:-140px;background:#4f8cff;opacity:.32}
+  .page-glow .g2{width:560px;height:560px;top:-180px;right:-150px;background:#8b5cf6;opacity:.3}
+  .page-glow .g3{width:700px;height:700px;top:1000px;left:40%;background:#1b2a6b;opacity:.32}
+  .page-grid{
+    position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:72px 72px;
+    mask-image:radial-gradient(circle at 50% 0%,#000,transparent 60%);
+    -webkit-mask-image:radial-gradient(circle at 50% 0%,#000,transparent 60%);
+  }
+
+  /* header */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(7,8,13,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    border-bottom:1px solid transparent;transition:border-color .3s,background .3s;
+  }
+  header.scrolled{border-bottom-color:var(--line);background:rgba(7,8,13,.9)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:74px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:"Outfit",sans-serif;font-weight:800;font-size:1.35rem;letter-spacing:-.04em}
+  .logo-text{display:inline-flex;align-items:baseline}
+  .logo-mark{
+    width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+    background:linear-gradient(140deg,var(--lime),#7cf7c4 60%,var(--blue));
+    color:#08090f;box-shadow:0 10px 26px -10px rgba(201,255,77,.8);
+  }
+  .logo-mark svg{width:22px;height:22px}
+  .logo b{color:var(--lime)}
+  .nav-links{display:flex;gap:28px;font-size:.92rem;color:var(--muted)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-actions{display:flex;align-items:center;gap:10px}
+  .menu-btn{display:none;width:40px;height:40px;border-radius:11px;border:1px solid var(--line);place-items:center;color:var(--text)}
+  .menu-btn svg{width:20px;height:20px}
+  .mobile-menu{display:none;flex-direction:column;padding:6px 24px 20px;border-top:1px solid var(--line);background:rgba(7,8,13,.98)}
+  .mobile-menu a{padding:13px 2px;border-bottom:1px solid var(--line);color:var(--muted);font-size:.95rem}
+  .mobile-menu a:last-child{border-bottom:0;color:var(--lime);font-weight:500}
+  .mobile-menu.open{display:flex}
+
+  /* buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    height:50px;padding:0 24px;border-radius:13px;font-weight:600;font-size:.95rem;
+    border:1px solid transparent;white-space:nowrap;
+    transition:transform .2s,box-shadow .25s,background .2s,border-color .2s;
+  }
+  .btn svg{width:18px;height:18px;transition:transform .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{transform:translateY(0)}
+  .btn-lime{background:var(--lime);color:#090b10;box-shadow:0 14px 34px -14px rgba(201,255,77,.9)}
+  .btn-lime:hover{box-shadow:0 20px 44px -16px rgba(201,255,77,1)}
+  .btn-lime:hover svg{transform:scale(1.08)}
+  .btn-ghost{border-color:var(--line-strong);background:rgba(255,255,255,.04);color:var(--text)}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3)}
+  .btn-sm{height:42px;padding:0 18px;font-size:.88rem;border-radius:11px}
+
+  /* hero */
+  .hero{position:relative;padding:78px 0 40px;z-index:1}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;margin-bottom:24px;
+    padding:8px 14px;border-radius:100px;border:1px solid var(--line-strong);
+    background:rgba(255,255,255,.04);font-size:.78rem;color:var(--muted);letter-spacing:.02em;
+  }
+  .pulse{position:relative;width:7px;height:7px;border-radius:50%;background:var(--lime);flex:none}
+  .pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--lime);animation:pulse 2s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.8);opacity:0}}
+  .hero h1{font-size:clamp(2.7rem,5.6vw,4.3rem);font-weight:800;letter-spacing:-.045em}
+  .hero h1 .grad{
+    background:linear-gradient(100deg,var(--lime),#7cf7c4 55%,var(--blue));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .lead{margin-top:22px;font-size:1.05rem;color:var(--muted);max-width:50ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .hero-trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;font-size:.84rem;color:var(--muted)}
+  .hero-trust span{display:flex;align-items:center;gap:7px}
+  .hero-trust svg{width:15px;height:15px;color:var(--lime);flex:none}
+  .hero-trust .star{color:#ffd166}
+
+  /* hero art */
+  .stage{position:relative;display:grid;place-items:center;min-height:470px}
+  .stage-glow{position:absolute;width:78%;aspect-ratio:1;border-radius:50%;filter:blur(70px);opacity:.45;
+    background:conic-gradient(from 40deg,#4f8cff,#8b5cf6,#ff5c8a,#4f8cff);animation:spin 24s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .tv{position:relative;width:100%;max-width:476px;z-index:2;animation:float 9s ease-in-out infinite}
+  @keyframes float{50%{transform:translateY(-12px)}}
+  .tv-frame{
+    padding:10px;border-radius:20px;
+    background:linear-gradient(160deg,#232838,#0b0d15 70%);
+    border:1px solid rgba(255,255,255,.14);
+    box-shadow:0 46px 90px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.12);
+    transform:perspective(1300px) rotateY(-8deg) rotateX(3deg);
+  }
+  .screen{position:relative;aspect-ratio:16/10;border-radius:12px;overflow:hidden;
+    background:radial-gradient(circle at 50% 68%,rgba(255,92,138,.35),transparent 55%),linear-gradient(180deg,#120b2e,#1b1140 55%,#08061a)}
+  .sun{
+    position:absolute;left:50%;top:30%;width:150px;height:150px;transform:translateX(-50%);
+    border-radius:50%;background:linear-gradient(180deg,#ffd166,#ff5c8a);
+    box-shadow:0 0 80px rgba(255,92,138,.65);
+    -webkit-mask-image:repeating-linear-gradient(180deg,#000 0 9px,transparent 9px 13px);
+    mask-image:repeating-linear-gradient(180deg,#000 0 9px,transparent 9px 13px);
+  }
+  .floor{
+    position:absolute;left:-30%;right:-30%;bottom:-12%;height:56%;opacity:.75;
+    background-image:linear-gradient(rgba(79,140,255,.65) 1px,transparent 1px),linear-gradient(90deg,rgba(79,140,255,.65) 1px,transparent 1px);
+    background-size:38px 38px;
+    transform:perspective(210px) rotateX(62deg);transform-origin:bottom;
+    -webkit-mask-image:linear-gradient(transparent,#000 45%);mask-image:linear-gradient(transparent,#000 45%);
+  }
+  .screen-hud{position:absolute;inset:0;padding:16px;display:flex;flex-direction:column;justify-content:space-between;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+  .hud-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .hud-pill{padding:4px 9px;border-radius:100px;border:1px solid rgba(255,255,255,.28);background:rgba(6,7,13,.35);backdrop-filter:blur(6px)}
+  .screen-title{position:absolute;left:18px;top:52px;font-family:"Outfit",sans-serif;font-weight:800;font-size:2.3rem;line-height:1;letter-spacing:-.04em;color:#fff;text-shadow:0 0 30px rgba(79,140,255,.9)}
+  .screen-title span{display:block;font-size:.8rem;letter-spacing:.2em;color:var(--lime);margin-top:6px}
+  .hud-bar{width:120px;height:7px;border-radius:4px;background:rgba(255,255,255,.2);overflow:hidden}
+  .hud-bar i{display:block;width:76%;height:100%;background:linear-gradient(90deg,var(--lime),#6ee7b7);box-shadow:0 0 14px var(--lime)}
+  .scan{position:absolute;inset:0;pointer-events:none;opacity:.25;
+    background:repeating-linear-gradient(180deg,rgba(255,255,255,.055) 0 1px,transparent 1px 3px)}
+  .console{
+    position:absolute;right:-2%;bottom:-1%;width:84px;height:172px;z-index:4;
+    border-radius:34px 34px 14px 14px;
+    background:linear-gradient(100deg,#f8f9fc,#ccd3e0 55%,#f1f4f9);
+    box-shadow:0 26px 50px -20px rgba(0,0,0,.95);
+  }
+  .console::before{content:"";position:absolute;inset:12px 17px;border-radius:24px;background:linear-gradient(180deg,#0a0c13,#171d2d)}
+  .console::after{content:"";position:absolute;left:50%;bottom:14px;width:20px;height:3px;transform:translateX(-50%);border-radius:2px;background:var(--blue);box-shadow:0 0 16px var(--blue)}
+  .chip{
+    position:absolute;z-index:3;display:flex;align-items:center;gap:8px;
+    padding:9px 13px;border-radius:12px;font-size:.74rem;font-weight:500;
+    background:rgba(15,18,28,.82);border:1px solid var(--line-strong);
+    backdrop-filter:blur(14px);box-shadow:0 18px 34px -18px rgba(0,0,0,.9);
+    animation:bob 7s ease-in-out infinite;
+  }
+  .chip svg{width:14px;height:14px;color:var(--lime);flex:none}
+  .chip-a{top:2%;right:0;animation-delay:-2s}
+  .chip-b{bottom:1%;left:33%;animation-delay:-4s}
+  .chip-c{top:40%;left:-6%;animation-delay:-1s}
+  @keyframes bob{50%{transform:translateY(-11px)}}
+  .pad{position:absolute;left:1%;bottom:1%;width:76px;height:52px;z-index:3;color:#dfe5f2;filter:drop-shadow(0 10px 18px rgba(0,0,0,.7));transform:rotate(-12deg);opacity:.85;animation:bob 8s ease-in-out infinite}
+  /* stats strip */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:44px;padding:26px 12px;border-radius:20px;
+    border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));text-align:center}
+  .stats b{display:block;font-family:"Outfit",sans-serif;font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-.03em;color:var(--lime)}
+  .stats span{font-size:.76rem;color:var(--muted);line-height:1.35;display:block;margin-top:2px}
+
+  /* section base */
+  section{position:relative;z-index:1}
+  .sec{padding:100px 0}
+  .sec-head{max-width:640px;margin-bottom:44px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .eyebrow-line{display:inline-flex;align-items:center;gap:9px;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);font-weight:600}
+  .eyebrow-line::before{content:"";width:22px;height:1.5px;background:var(--lime)}
+  .sec-head h2{font-size:clamp(1.9rem,3.8vw,2.8rem);margin-top:14px;letter-spacing:-.04em}
+  .sec-head p{color:var(--muted);margin-top:16px;max-width:56ch}
+  .sec-head.center p{margin-left:auto;margin-right:auto}
+
+  /* pricing */
+  .day-toggle{display:inline-flex;padding:4px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03);gap:2px}
+  .day-toggle button{padding:9px 18px;border-radius:9px;font-size:.84rem;color:var(--muted);font-weight:500;transition:background .25s,color .25s}
+  .day-toggle button[aria-pressed="true"]{background:var(--lime);color:#090b10;font-weight:600}
+  .price-top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+  .price-note{font-size:.8rem;color:var(--muted)}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+  .plan{
+    position:relative;display:flex;flex-direction:column;padding:30px;border-radius:20px;
+    border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+    transition:transform .3s,border-color .3s,box-shadow .3s;
+  }
+  .plan:hover{transform:translateY(-6px);border-color:rgba(201,255,77,.35);box-shadow:0 30px 60px -40px rgba(201,255,77,.8)}
+  .plan.hot{border-color:rgba(201,255,77,.45);background:linear-gradient(180deg,rgba(201,255,77,.1),rgba(79,140,255,.05));box-shadow:0 30px 70px -44px rgba(201,255,77,.9);transform:translateY(-8px)}
+  .plan.hot:hover{transform:translateY(-12px)}
+  .plan-tag{position:absolute;top:-12px;left:30px;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:#090b10;background:var(--lime);padding:5px 11px;border-radius:100px}
+  .plan h3{font-size:1.2rem;display:flex;align-items:center;gap:9px}
+  .plan h3 svg{width:20px;height:20px;color:var(--lime)}
+  .plan-sub{font-size:.83rem;color:var(--muted);margin-top:5px}
+  .amount{display:flex;align-items:baseline;gap:3px;margin:20px 0 4px}
+  .amount .rp{font-size:.9rem;color:var(--muted);font-weight:500}
+  .amount b{font-family:"Outfit",sans-serif;font-size:2.6rem;font-weight:800;letter-spacing:-.045em;line-height:1}
+  .amount .per{font-size:.8rem;color:var(--muted);margin-left:3px}
+  .amount-note{font-size:.72rem;color:var(--muted);opacity:.8}
+  .plan ul{list-style:none;padding:0;margin:22px 0 28px;display:grid;gap:11px;flex:1}
+  .plan li{display:flex;gap:9px;align-items:flex-start;font-size:.88rem;color:var(--muted)}
+  .plan li svg{flex:none;width:16px;height:16px;margin-top:3px;color:var(--lime)}
+  .plan .btn{width:100%}
+  .promo{
+    display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+    margin-top:20px;padding:18px 24px;border-radius:14px;
+    border:1px dashed rgba(201,255,77,.35);background:rgba(201,255,77,.05);
+  }
+  .promo p{font-size:.88rem;color:var(--muted)}
+  .promo b{color:var(--text)}
+  .promo .tagline{font-size:.78rem;color:var(--lime);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+
+  /* facilities */
+  .facilities{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .facility{padding:24px 20px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.028);transition:border-color .25s,background .25s,transform .25s}
+  .facility:hover{border-color:rgba(79,140,255,.4);background:rgba(79,140,255,.07);transform:translateY(-4px)}
+  .facility .ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;margin-bottom:14px;
+    background:linear-gradient(150deg,rgba(79,140,255,.25),rgba(139,92,246,.12));border:1px solid var(--line-strong)}
+  .facility .ico svg{width:20px;height:20px;color:#9db9ff}
+  .facility h3{font-size:.95rem;font-weight:600;margin-bottom:4px}
+  .facility p{font-size:.82rem;color:var(--muted)}
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px}
+  .photo{
+    position:relative;border-radius:18px;overflow:hidden;min-height:280px;
+    border:1px solid var(--line);display:flex;align-items:flex-end;padding:22px;
+    transition:transform .35s,border-color .35s;
+  }
+  .photo:hover{transform:translateY(-4px);border-color:var(--line-strong)}
+  .photo::before{
+    content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+    background-size:34px 34px;opacity:.6;mix-blend-mode:overlay;
+  }
+  .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(4,5,9,.85))}
+  .photo.p1{background:radial-gradient(120% 110% at 20% 10%,#3b6fe0,#101a3d 55%,#080a14)}
+  .photo.p2{background:radial-gradient(120% 110% at 30% 10%,#7c4dff,#1d1240 55%,#0a0814)}
+  .photo.p3{background:radial-gradient(120% 110% at 30% 10%,#ff5c8a,#3a1030 55%,#12060f)}
+  .photo .meta{position:relative;z-index:2}
+  .photo .meta span{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);font-weight:600}
+  .photo .meta h3{font-size:1.15rem;margin-top:5px}
+  .photo .meta p{font-size:.8rem;color:rgba(241,244,250,.72);margin-top:3px}
+  .photo .art{position:absolute;top:26px;left:26px;width:160px;height:auto;opacity:.28;color:#fff;z-index:1}
+  .photo.p1 .art{width:200px}
+
+  /* games marquee */
+  .games-strip{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:60px;overflow:hidden}
+  .games-label{text-align:center;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+  .marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+  .track{display:flex;width:max-content;animation:scroll 38s linear infinite}
+  .marquee:hover .track{animation-play-state:paused}
+  .group{display:flex;gap:10px;padding-right:10px}
+  .game{
+    display:flex;align-items:center;gap:8px;padding:9px 15px;border-radius:100px;white-space:nowrap;
+    border:1px solid var(--line);background:rgba(255,255,255,.035);font-size:.82rem;color:var(--muted);
+  }
+  .game i{width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue);flex:none}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* booking calculator */
+  .booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .steps{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:18px;counter-reset:s}
+  .steps li{display:flex;gap:14px}
+  .steps li b{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;font-family:"Outfit",sans-serif;
+    border:1px solid rgba(201,255,77,.35);background:rgba(201,255,77,.08);color:var(--lime);font-size:.85rem}
+  .steps li span{font-size:.92rem;color:var(--muted)}
+  .steps li span strong{display:block;color:var(--text);font-weight:600;font-size:.98rem;margin-bottom:1px}
+  .calc{
+    position:relative;padding:30px;border-radius:22px;border:1px solid rgba(201,255,77,.22);
+    background:
+      radial-gradient(500px circle at 100% 0%,rgba(79,140,255,.16),transparent 60%),
+      linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+    box-shadow:0 40px 80px -50px rgba(0,0,0,.9);
+  }
+  .calc h3{font-size:1.2rem;margin-bottom:4px}
+  .calc .calc-sub{font-size:.82rem;color:var(--muted);margin-bottom:22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .select-wrap{position:relative}
+  .select-wrap select{
+    width:100%;height:48px;appearance:none;-webkit-appearance:none;padding:0 42px 0 14px;
+    border-radius:11px;border:1px solid var(--line-strong);background:#0d1019;color:var(--text);
+    font:inherit;font-size:.92rem;cursor:pointer;
+  }
+  .select-wrap svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;pointer-events:none;color:var(--muted)}
+  .stepper{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px;border-radius:11px;border:1px solid var(--line-strong);background:#0d1019}
+  .stepper button{width:38px;height:38px;border-radius:8px;display:grid;place-items:center;border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.05);transition:background .2s,color .2s}
+  .stepper button:hover:not(:disabled){background:var(--lime);color:#090b10}
+  .stepper button:disabled{opacity:.35;cursor:not-allowed}
+  .stepper button svg{width:16px;height:16px}
+  .stepper .val{font-family:"Outfit",sans-serif;font-weight:600;font-size:1rem;display:flex;align-items:baseline;gap:4px}
+  .stepper .val small{font-size:.75rem;color:var(--muted);font-weight:400}
+  .calc-total{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:22px 0 6px;padding-top:20px;border-top:1px dashed var(--line-strong)}
+  .calc-total span{font-size:.78rem;color:var(--muted)}
+  .calc-total b{font-family:"Outfit",sans-serif;font-size:2rem;letter-spacing:-.04em;color:var(--lime);line-height:1}
+  .calc-note{font-size:.72rem;color:var(--muted);margin-bottom:18px}
+  .calc .btn{width:100%}
+
+  /* testimonials */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .quote{padding:26px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:16px}
+  .stars{display:flex;gap:3px;color:#ffd166}
+  .stars svg{width:15px;height:15px}
+  .quote p{font-size:.92rem;color:var(--text);opacity:.92;flex:1}
+  .person{display:flex;align-items:center;gap:11px}
+  .avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.8rem;color:#090b10;background:linear-gradient(140deg,var(--lime),#7cf7c4)}
+  .person:nth-child(2) .avatar{background:linear-gradient(140deg,#9db9ff,var(--violet));color:#fff}
+  .person b{display:block;font-size:.85rem;font-weight:600}
+  .person span{display:block;font-size:.74rem;color:var(--muted)}
+
+  /* location */
+  .loc{display:grid;grid-template-columns:1.05fr .95fr;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+  .loc-info{padding:34px}
+  .loc-info h2{font-size:1.7rem;margin-bottom:10px}
+  .loc-info p{font-size:.9rem;color:var(--muted)}
+  .loc-list{list-style:none;padding:0;margin:22px 0 26px;display:grid;gap:13px}
+  .loc-list li{display:flex;gap:11px;font-size:.88rem;color:var(--muted)}
+  .loc-list svg{flex:none;width:17px;height:17px;color:var(--lime);margin-top:3px}
+  .loc-list b{color:var(--text);font-weight:500}
+  .loc-cta{display:flex;flex-wrap:wrap;gap:10px}
+  .map{
+    position:relative;min-height:300px;display:grid;place-items:center;
+    background:
+      radial-gradient(circle at 60% 45%,rgba(79,140,255,.18),transparent 60%),
+      linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px),
+      #090b12;
+    background-size:auto,40px 40px,40px 40px,auto;
+    border-left:1px solid var(--line);
+  }
+  .map::before{
+    content:"";position:absolute;inset:0;opacity:.35;
+    background:
+      linear-gradient(115deg,transparent 46%,rgba(79,140,255,.35) 47%,rgba(79,140,255,.35) 48%,transparent 49%),
+      linear-gradient(25deg,transparent 60%,rgba(201,255,77,.25) 61%,rgba(201,255,77,.25) 62%,transparent 63%);
+  }
+  .pin{position:relative;z-index:2;display:grid;place-items:center}
+  .pin-dot{width:16px;height:16px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 6px rgba(201,255,77,.16),0 0 34px rgba(201,255,77,.8)}
+  .pin-ring{position:absolute;width:16px;height:16px;border-radius:50%;border:1.5px solid var(--lime);animation:ring 2.4s ease-out infinite}
+  .pin-ring:nth-child(2){animation-delay:.8s}
+  @keyframes ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(4);opacity:0}}
+  .pin-label{position:absolute;top:34px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:5px 10px;border-radius:100px;border:1px solid var(--line);background:rgba(7,8,13,.8)}
+
+  /* faq */
+  .faq{max-width:800px;margin:0 auto}
+  details{border-bottom:1px solid var(--line)}
+  details summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 2px;font-weight:500;font-size:1rem;transition:color .2s}
+  details summary::-webkit-details-marker{display:none}
+  details summary:hover{color:var(--lime)}
+  details summary .plus{position:relative;width:18px;height:18px;flex:none}
+  details summary .plus::before,details summary .plus::after{content:"";position:absolute;background:currentColor;border-radius:2px;transition:transform .3s}
+  details summary .plus::before{top:8px;left:0;width:18px;height:1.6px}
+  details summary .plus::after{left:8px;top:0;width:1.6px;height:18px}
+  details[open] summary{color:var(--lime)}
+  details[open] summary .plus::after{transform:rotate(90deg)}
+  details p{padding:0 40px 24px 2px;font-size:.92rem;color:var(--muted)}
+
+  /* cta */
+  .cta{
+    position:relative;overflow:hidden;border-radius:26px;padding:60px 40px;text-align:center;
+    border:1px solid rgba(201,255,77,.3);
+    background:
+      radial-gradient(600px circle at 20% 0%,rgba(79,140,255,.28),transparent 65%),
+      radial-gradient(500px circle at 90% 100%,rgba(201,255,77,.16),transparent 70%),
+      linear-gradient(180deg,#0f1424,#0a0c14);
+  }
+  .cta h2{font-size:clamp(1.9rem,3.6vw,2.7rem);max-width:22ch;margin:0 auto}
+  .cta p{color:var(--muted);margin:14px auto 28px;max-width:46ch}
+  .cta .hero-cta{justify-content:center;margin-top:0}
+  .cta .hero-trust{justify-content:center;margin-top:20px}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);margin-top:90px;padding:52px 0 28px;position:relative;z-index:1}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:36px}
+  .foot-brand p{font-size:.86rem;color:var(--muted);margin-top:14px;max-width:32ch}
+  .social{display:flex;gap:8px;margin-top:18px}
+  .social a{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;border:1px solid var(--line);color:var(--muted);transition:color .2s,border-color .2s,background .2s}
+  .social a:hover{color:var(--lime);border-color:rgba(201,255,77,.4);background:rgba(201,255,77,.08)}
+  .social svg{width:17px;height:17px}
+  .foot-col h4{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-weight:500}
+  .foot-col a,.foot-col p{display:block;font-size:.87rem;color:rgba(241,244,250,.78);padding:4px 0;transition:color .2s}
+  .foot-col a:hover{color:var(--lime)}
+  .foot-bottom{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+
+  /* floating wa + mobile bar */
+  .fab{
+    position:fixed;right:22px;bottom:22px;z-index:70;width:56px;height:56px;border-radius:50%;
+    display:grid;place-items:center;background:#25d366;color:#062b13;
+    box-shadow:0 16px 34px -12px rgba(37,211,102,.8);transition:transform .2s;
+  }
+  .fab:hover{transform:scale(1.07)}
+  .fab svg{width:28px;height:28px}
+  .fab::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid rgba(37,211,102,.6);animation:ring 2.6s ease-out infinite}
+  .mobile-bar{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;
+    align-items:center;justify-content:space-between;gap:14px;padding:12px 18px calc(12px + env(safe-area-inset-bottom));
+    background:rgba(9,11,18,.96);border-top:1px solid var(--line);backdrop-filter:blur(16px);
+  }
+  .mobile-bar small{display:block;font-size:.68rem;color:var(--muted)}
+  .mobile-bar b{font-family:"Outfit",sans-serif;font-size:1.05rem;color:var(--lime)}
+  .mobile-bar .btn{height:44px;padding:0 18px;font-size:.85rem}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* responsive */
+  @media (max-width:1020px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero{padding-top:56px}
+    .stage{min-height:430px;max-width:520px;margin:0 auto;width:100%}
+    .plans{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+    .plan.hot{transform:none}
+    .plan.hot:hover{transform:translateY(-6px)}
+    .facilities{grid-template-columns:repeat(2,1fr)}
+    .gallery{grid-template-columns:1fr 1fr}
+    .photo.p1{grid-column:1/-1}
+    .booking-grid{grid-template-columns:1fr;gap:34px}
+    .quotes{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+    .loc{grid-template-columns:1fr}
+    .map{border-left:0;border-top:1px solid var(--line);min-height:240px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media (max-width:780px){
+    .nav-links,.nav-actions .btn{display:none}
+    .menu-btn{display:grid}
+    .sec{padding:72px 0}
+    .hero h1{letter-spacing:-.04em}
+    .stats{grid-template-columns:repeat(2,1fr);gap:20px 8px;padding:22px 12px}
+    .chip-c{display:none}
+    .chip-a{right:0}
+    .chip-b{left:0}
+    .console{right:-3%;bottom:0;width:64px;height:138px}
+    .pad{display:none}
+    .gallery{grid-template-columns:1fr}
+    .photo{min-height:220px}
+    .cta{padding:44px 22px}
+    .foot-grid{gap:28px}
+    .fab{display:none}
+    .mobile-bar{display:flex}
+    body{padding-bottom:74px}
+    .promo{padding:16px 18px}
+    .loc-info{padding:26px 22px}
+  }
+  @media (max-width:480px){
+    .hero h1{font-size:2.45rem}
+    .hero-cta{flex-direction:column;align-items:stretch}
+    .hero-cta .btn{width:100%}
+    .chip{font-size:.68rem;padding:7px 10px}
+    .screen-title{font-size:1.9rem}
+    .loc-cta .btn{width:100%}
+    .console{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
 </head>
-<body>
-  <a class="skip-link" href="#konten">Lewati ke konten</a>
+<body id="top">
+<div class="page-glow" aria-hidden="true"><span class="g1"></span><span class="g2"></span><span class="g3"></span></div>
+<div class="page-grid" aria-hidden="true"></div>
 
-  <!-- Sprite ikon: didefinisikan sekali, dipakai lewat <use href="#i-..."> -->
-  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <symbol id="i-whatsapp" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-    </symbol>
-    <symbol id="i-github" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.27 5.69.42.36.79 1.07.79 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/>
-    </symbol>
-    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M5 12h14"/>
-      <path d="m13 6 6 6-6 6"/>
-    </symbol>
-    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M20 6 9 17l-5-5"/>
-    </symbol>
-    <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <path d="m8 6-6 6 6 6"/>
-      <path d="m16 6 6 6-6 6"/>
-    </symbol>
-    <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2.5" y="4" width="19" height="13" rx="2"/>
-      <path d="M8 21h8M12 17v4"/>
-    </symbol>
-    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2.5" y="7" width="19" height="13" rx="2.5"/>
-      <path d="M8.5 7V5.5a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2V7"/>
-      <path d="M2.5 12.5h19"/>
-    </symbol>
-    <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 9.5 4.5 4h15L21 9.5"/>
-      <path d="M3 9.5h18V20H3z"/>
-      <path d="M9 20v-5h6v5"/>
-    </symbol>
-    <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/>
-    </symbol>
-    <symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="16" rx="2"/>
-      <path d="M3 10h18M10 10v10"/>
-    </symbol>
-    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12a8 8 0 0 1-8 8H8l-5 3 1.2-4.2A8 8 0 1 1 21 12Z"/>
-    </symbol>
-    <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M14 3h7v7"/>
-      <path d="M21 3 12 12"/>
-      <path d="M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/>
-    </symbol>
-    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-      <path d="M18 6 6 18"/>
-      <path d="m6 6 12 12"/>
-    </symbol>
-  </svg>
-
-  <!-- ========== HEADER ========== -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#beranda" aria-label="Andreas Powel Sinaga — kembali ke atas">
-        <span class="brand-mark" aria-hidden="true">A</span>
-        <span class="brand-text">Andreas<span class="brand-dot">.</span></span>
-      </a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Buka menu navigasi">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </button>
-
-      <nav class="nav" aria-label="Navigasi utama">
-        <ul class="nav-menu" id="nav-menu">
-          <li><a class="nav-link" href="#layanan">Layanan</a></li>
-          <li><a class="nav-link" href="#proyek">Proyek</a></li>
-          <li><a class="nav-link" href="#proses">Proses</a></li>
-          <li><a class="nav-link" href="#faq">FAQ</a></li>
-          <li><a class="nav-link" href="#kontak">Kontak</a></li>
-          <li>
-            <a class="btn btn--primary btn--sm nav-cta" href="https://wa.me/6287789734353?text=Halo%20Andreas%2C%20saya%20mau%20konsultasi%20soal%20pembuatan%20website." target="_blank" rel="noopener">
-              <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-              Konsultasi
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="konten" tabindex="-1">
-    <!-- ========== HERO ========== -->
-    <section class="hero" id="beranda">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow reveal">
-            <span class="status-dot" aria-hidden="true"></span>
-            Tersedia untuk proyek baru
-          </p>
-
-          <h1 class="reveal" style="--d:.05s">
-            Website yang bikin<br>bisnis kamu
-            <span class="grad">dilirik.</span>
-          </h1>
-
-          <p class="lede reveal" style="--d:.1s">
-            Saya Andreas — membangun landing page dan website UMKM yang cepat,
-            responsif, dan diarahkan untuk satu hal: membuat pengunjung menghubungi kamu.
-          </p>
-
-          <div class="hero-actions reveal" style="--d:.15s">
-            <a class="btn btn--primary" href="https://wa.me/6287789734353?text=Halo%20Andreas%2C%20saya%20mau%20konsultasi%20soal%20pembuatan%20website." target="_blank" rel="noopener">
-              <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-              Konsultasi Gratis
-            </a>
-            <a class="btn btn--ghost" href="#proyek">
-              Lihat Karya
-              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-          </div>
-
-          <ul class="trust-list reveal" style="--d:.2s">
-            <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
-              Responsif di semua layar
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
-              Revisi sampai cocok
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
-              Kode rapi &amp; mudah dirawat
-            </li>
-          </ul>
-        </div>
-
-        <div class="hero-visual reveal" style="--d:.1s" aria-hidden="true">
-          <div class="orbit orbit--1"></div>
-          <div class="orbit orbit--2"></div>
-          <div class="avatar">APS</div>
-
-          <div class="float float--a">
-            <span class="float-icon">
-              <svg class="icon"><use href="#i-code"/></svg>
-            </span>
-            HTML · CSS · JS
-          </div>
-
-          <div class="float float--b">
-            <span class="float-icon">
-              <svg class="icon"><use href="#i-bolt"/></svg>
-            </span>
-            Cepat &amp; ringan
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== LAYANAN ========== -->
-    <section class="section" id="layanan">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="section-label">Layanan</p>
-          <h2>Dibuat sesuai kebutuhan bisnismu</h2>
-          <p class="section-desc">
-            Tidak semua usaha butuh situs yang rumit. Saya bantu pilih bentuk paling
-            masuk akal, lalu membangunnya dengan rapi.
-          </p>
-        </div>
-
-        <div class="services">
-          <article class="service-card reveal">
-            <span class="service-icon" aria-hidden="true">
-              <svg class="icon"><use href="#i-monitor"/></svg>
-            </span>
-            <h3>Landing Page</h3>
-            <p>
-              Satu halaman fokus untuk promosi produk, jasa, atau event. Cocok untuk
-              iklan dan campaign yang butuh hasil cepat.
-            </p>
-            <ul class="feature-list">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Struktur penawaran yang jelas</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Tombol WhatsApp langsung</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Ringan, cepat dibuka</li>
-            </ul>
-            <a class="service-link" href="https://wa.me/6287789734353?text=Halo%20Andreas%2C%20saya%20mau%20tanya%20soal%20layanan%20Landing%20Page." target="_blank" rel="noopener">
-              Diskusikan kebutuhan
-              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-          </article>
-
-          <article class="service-card reveal" style="--d:.08s">
-            <span class="service-icon" aria-hidden="true">
-              <svg class="icon"><use href="#i-briefcase"/></svg>
-            </span>
-            <h3>Company Profile</h3>
-            <p>
-              Profil usaha yang membuat calon pelanggan percaya: layanan, galeri,
-              testimoni, dan cara menghubungi kamu.
-            </p>
-            <ul class="feature-list">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Multi-section yang tertata</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Galeri &amp; testimoni</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>SEO dasar</li>
-            </ul>
-            <a class="service-link" href="https://wa.me/6287789734353?text=Halo%20Andreas%2C%20saya%20mau%20tanya%20soal%20layanan%20Company%20Profile." target="_blank" rel="noopener">
-              Diskusikan kebutuhan
-              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-          </article>
-
-          <article class="service-card reveal" style="--d:.16s">
-            <span class="service-icon" aria-hidden="true">
-              <svg class="icon"><use href="#i-store"/></svg>
-            </span>
-            <h3>Website UMKM / Toko</h3>
-            <p>
-              Etalase produk dengan alur pesan langsung ke WhatsApp, tanpa potongan
-              biaya platform dan tanpa aplikasi tambahan.
-            </p>
-            <ul class="feature-list">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Katalog produk</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Order via WhatsApp</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Mobile-first</li>
-            </ul>
-            <a class="service-link" href="https://wa.me/6287789734353?text=Halo%20Andreas%2C%20saya%20mau%20tanya%20soal%20website%20untuk%20usaha%20saya." target="_blank" rel="noopener">
-              Diskusikan kebutuhan
-              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== PROYEK ========== -->
-    <section class="section section--soft" id="proyek">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="section-label">Proyek</p>
-          <h2>Karya yang sudah dibangun</h2>
-          <p class="section-desc">
-            Dua contoh: satu situs personal brand, satu landing page rental yang bisa
-            langsung kamu coba. Buka detailnya untuk melihat proses pengerjaan.
-          </p>
-        </div>
-
-        <div class="projects">
-          <article class="project-card reveal">
-            <div class="project-cover project-cover--portfolio" aria-hidden="true">
-              <div class="mini-browser">
-                <div class="mini-bar"><i></i><i></i><i></i></div>
-                <div class="mini-page">
-                  <span class="mini-eyebrow">PORTFOLIO</span>
-                  <p class="mini-h">Website rapi, bisnis terlihat serius.</p>
-                  <span class="mini-btn">Konsultasi</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-body">
-              <p class="project-kicker">Personal Brand · 2026</p>
-              <h3>Portofolio Pribadi</h3>
-              <p class="project-desc">
-                Situs satu halaman yang menempatkan layanan di depan: pengunjung
-                langsung paham apa yang ditawarkan dan bagaimana menghubungi.
-              </p>
-              <ul class="chips chips--sm">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Responsif</li>
-              </ul>
-              <div class="project-actions">
-                <button class="project-more" type="button" data-project="portfolio">
-                  Lihat detail
-                  <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal" style="--d:.08s">
-            <div class="project-cover project-cover--ngeps" aria-hidden="true">
-              <div class="mini-ps">
-                <span class="mini-logo">NgePS</span>
-                <p class="mini-h mini-h--light">Mabar seru,<br>harga tetap santai.</p>
-                <p class="mini-price">Rp15rb<span>/jam</span></p>
-                <span class="mini-btn mini-btn--wa">Booking via WhatsApp</span>
-              </div>
-              <span class="cover-badge">Demo tersedia</span>
-            </div>
-
-            <div class="project-body">
-              <p class="project-kicker">Landing Page · 2026</p>
-              <h3>NgePS</h3>
-              <p class="project-desc">
-                Landing page rental PS4 &amp; PS5 yang fokus pada konversi:
-                pengunjung diarahkan ke WhatsApp dengan pesan booking yang sudah
-                terisi otomatis.
-              </p>
-              <ul class="chips chips--sm">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-              </ul>
-              <div class="project-actions">
-                <a class="project-demo" href="proyek/ngeps/index.html" target="_blank" rel="noopener">
-                  Buka demo
-                  <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
-                </a>
-                <button class="project-more" type="button" data-project="ngeps">
-                  Lihat detail
-                  <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-                </button>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== PROSES ========== -->
-    <section class="section" id="proses">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="section-label">Proses</p>
-          <h2>Alurnya sederhana, tanpa kejutan</h2>
-          <p class="section-desc">
-            Kamu tahu apa yang terjadi di setiap tahap, dan saya hanya lanjut setelah
-            kamu setuju.
-          </p>
-        </div>
-
-        <ol class="steps">
-          <li class="step reveal">
-            <span class="step-num" aria-hidden="true">01</span>
-            <h3>Diskusi</h3>
-            <p>
-              Kita bahas tujuan, target pengunjung, dan isi yang perlu ditampilkan.
-              Gratis, tanpa komitmen.
-            </p>
-          </li>
-          <li class="step reveal" style="--d:.08s">
-            <span class="step-num" aria-hidden="true">02</span>
-            <h3>Rancang</h3>
-            <p>
-              Saya susun struktur halaman dan tampilan awal untuk kamu review sebelum
-              masuk ke tahap kode.
-            </p>
-          </li>
-          <li class="step reveal" style="--d:.16s">
-            <span class="step-num" aria-hidden="true">03</span>
-            <h3>Bangun</h3>
-            <p>
-              Halaman dibangun responsif, cepat, lalu diuji di berbagai ukuran layar
-              dan perangkat.
-            </p>
-          </li>
-          <li class="step reveal" style="--d:.24s">
-            <span class="step-num" aria-hidden="true">04</span>
-            <h3>Rilis</h3>
-            <p>
-              Situs online, plus panduan singkat cara update konten dan kontak kalau
-              ada kendala.
-            </p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ========== KENAPA SAYA ========== -->
-    <section class="section section--soft" id="kenapa">
-      <div class="container why-inner">
-        <div class="section-head reveal">
-          <p class="section-label">Kenapa saya</p>
-          <h2>Bukan sekadar terlihat bagus</h2>
-          <p class="section-desc">
-            Website adalah alat. Ukurannya bukan seberapa ramai desainnya, tapi
-            seberapa mudah orang menghubungi kamu setelah membukanya.
-          </p>
-        </div>
-
-        <ul class="reasons">
-          <li class="reason reveal">
-            <span class="reason-icon" aria-hidden="true">
-              <svg class="icon"><use href="#i-layout"/></svg>
-            </span>
-            <div>
-              <h3>Fokus pada tujuan</h3>
-              <p>Setiap bagian punya alasan: mengarahkan pengunjung ke WhatsApp, bukan sekadar cantik.</p>
-            </div>
-          </li>
-          <li class="reason reveal" style="--d:.08s">
-            <span class="reason-icon" aria-hidden="true">
-              <svg class="icon"><use href="#i-bolt"/></svg>
-            </span>
-            <div>
-              <h3>Ringan &amp; cepat</h3>
-              <p>Tanpa kerangka berat. Halaman terbuka cepat, termasuk saat sinyal sedang lemah.</p>
-            </div>
-          </li>
-          <li class="reason reveal" style="--d:.16s">
-            <span class="reason-icon" aria-hidden="true">
-              <svg class="icon"><use href="#i-chat"/></svg>
-            </span>
-            <div>
-              <h3>Komunikasi jelas</h3>
-              <p>Update progres dan penjelasan tanpa istilah teknis berlebihan, jadi mudah dipahami.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ========== FAQ ========== -->
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="section-label">FAQ</p>
-          <h2>Pertanyaan yang sering muncul</h2>
-          <p class="section-desc">
-            Kalau yang kamu cari belum ada di sini, tanya langsung lewat WhatsApp.
-          </p>
-        </div>
-
-        <div class="faq-list reveal">
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-q1">
-              Berapa lama pengerjaannya?
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-a" id="faq-1" role="region" aria-labelledby="faq-q1">
-              <div class="faq-a-inner">
-                <p>
-                  Landing page sederhana biasanya 3–7 hari kerja setelah materi lengkap.
-                  Company profile 1–2 minggu, tergantung jumlah halaman dan isi.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-q2">
-              Apakah termasuk domain dan hosting?
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-a" id="faq-2" role="region" aria-labelledby="faq-q2">
-              <div class="faq-a-inner">
-                <p>
-                  Saya bantu arahkan dan memasangnya. Biaya domain serta hosting
-                  dibayar terpisah ke penyedia, jadi kepemilikannya ada di tangan kamu.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-q3">
-              Berapa kali bisa revisi?
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-a" id="faq-3" role="region" aria-labelledby="faq-q3">
-              <div class="faq-a-inner">
-                <p>
-                  Ada 2–3 putaran revisi di tahap desain dan penyesuaian akhir. Fokusnya
-                  memastikan struktur dan informasi utama sudah pas sebelum rilis.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-q4">
-              Materi apa yang perlu saya siapkan?
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-a" id="faq-4" role="region" aria-labelledby="faq-q4">
-              <div class="faq-a-inner">
-                <p>
-                  Teks, foto produk atau tempat, logo kalau ada, dan nomor WhatsApp
-                  tujuan. Kalau belum lengkap, saya bantu susun kerangka awalnya.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-q5">
-              Bisa pesan dengan tenggat mendesak?
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-a" id="faq-5" role="region" aria-labelledby="faq-q5">
-              <div class="faq-a-inner">
-                <p>
-                  Bisa, tergantung antrean yang sedang berjalan. Sebutkan tenggatnya
-                  saat konsultasi supaya saya bisa bilang realistis atau tidaknya.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== KONTAK ========== -->
-    <section class="section contact-section" id="kontak">
-      <div class="container">
-        <div class="contact-panel reveal">
-          <p class="section-label section-label--light">Kontak</p>
-          <h2>Punya ide? Ceritakan dulu.</h2>
-          <p class="contact-desc">
-            Konsultasi awal gratis dan tanpa komitmen. Ceritakan bisnismu, saya bantu
-            petakan halaman apa yang paling masuk akal untuk dibangun.
-          </p>
-
-          <div class="contact-actions">
-            <a class="btn btn--wa" href="https://wa.me/6287789734353?text=Halo%20Andreas%2C%20saya%20punya%20ide%20website%20dan%20mau%20diskusi." target="_blank" rel="noopener">
-              <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-              Chat di WhatsApp
-            </a>
-            <a class="btn btn--outline-light" href="https://github.com/powelgondez-spec" target="_blank" rel="noopener">
-              <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
-              powelgondez-spec
-            </a>
-          </div>
-
-          <p class="contact-note">
-            WhatsApp 0877-8973-4353 · Balasan di hari yang sama, 08.00–21.00 WIB.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="brand-mark" aria-hidden="true">A</span>
-        <div>
-          <p class="footer-name">Andreas Powel Sinaga</p>
-          <p class="footer-role">Web Developer · Freelance</p>
-        </div>
-      </div>
-
-      <nav class="footer-nav" aria-label="Navigasi footer">
-        <a href="#layanan">Layanan</a>
-        <a href="#proyek">Proyek</a>
-        <a href="#proses">Proses</a>
-        <a href="#faq">FAQ</a>
-        <a href="#kontak">Kontak</a>
-      </nav>
-
-      <a class="footer-github" href="https://github.com/powelgondez-spec" target="_blank" rel="noopener">
-        <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
-        GitHub
-      </a>
-    </div>
-
-    <div class="container footer-bottom">
-      <p>&copy; <span id="year">2026</span> Andreas Powel Sinaga.</p>
-      <p>Dibuat dengan HTML, CSS &amp; JavaScript.</p>
-    </div>
-  </footer>
-
-  <!-- Tombol WhatsApp melayang -->
-  <a class="wa-float" href="https://wa.me/6287789734353?text=Halo%20Andreas%2C%20saya%20mau%20konsultasi%20soal%20pembuatan%20website." target="_blank" rel="noopener" aria-label="Hubungi Andreas lewat WhatsApp">
-    <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-  </a>
-
-  <!-- ========== MODAL PROYEK ========== -->
-  <dialog class="modal" id="project-modal" aria-label="Detail proyek">
-    <div class="modal-inner">
-      <form method="dialog" class="modal-close-form">
-        <button class="modal-close" type="submit" aria-label="Tutup detail proyek">
-          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
-        </button>
-      </form>
-      <div id="modal-body"></div>
-    </div>
-  </dialog>
-
-  <!-- Isi detail proyek, dipakai oleh script.js -->
-  <template id="tpl-portfolio">
-    <p class="project-kicker">Personal Brand · 2026</p>
-    <h2>Portofolio Pribadi</h2>
-    <p class="modal-desc">
-      Situs portofolio satu halaman untuk menawarkan jasa pembuatan website. Alurnya
-      disusun seperti halaman penjualan: masalah pengunjung, layanan yang tersedia,
-      bukti karya, lalu ajakan menghubungi lewat WhatsApp.
-    </p>
-
-    <h3 class="modal-subtitle">Yang dikerjakan</h3>
-    <ul class="modal-list">
-      <li>Design system berbasis CSS custom properties: warna, radius, dan tipografi konsisten</li>
-      <li>Layout responsif dari 360px dengan navigasi menu khusus mobile</li>
-      <li>Animasi <em>reveal on scroll</em> yang otomatis nonaktif pada <em>prefers-reduced-motion</em></li>
-      <li>FAQ accordion dan modal proyek dengan elemen <code>&lt;dialog&gt;</code> yang aksesibel</li>
-      <li>SEO dasar: meta description, Open Graph, dan JSON-LD ProfessionalService</li>
-      <li>Tombol WhatsApp dengan pesan pembuka yang sudah terisi</li>
-    </ul>
-
-    <h3 class="modal-subtitle">Teknologi</h3>
-    <ul class="chips chips--sm">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Tanpa dependency</li>
-    </ul>
-
-    <p class="modal-note">
-      Situs yang sedang kamu buka ini adalah hasilnya. Kode sumbernya siap diunggah
-      ke GitHub Pages.
-    </p>
-  </template>
-
-  <template id="tpl-ngeps">
-    <p class="project-kicker">Landing Page · 2026</p>
-    <h2>NgePS</h2>
-    <p class="modal-desc">
-      Landing page satu halaman untuk usaha rental PS4 &amp; PS5. Fokusnya konversi:
-      pengunjung diarahkan ke WhatsApp dengan pesan booking yang sudah terisi paket,
-      hari, durasi, dan estimasi harga.
-    </p>
-
-    <h3 class="modal-subtitle">Yang dikerjakan</h3>
-    <ul class="modal-list">
-      <li>Toggle harga hari biasa dan weekend yang mengubah semua kartu sekaligus</li>
-      <li>Kalkulator booking: pilih paket dan durasi, total dihitung otomatis</li>
-      <li>Tombol WhatsApp dengan pesan otomatis yang sudah terisi</li>
-      <li>Galeri, fasilitas, testimoni, dan FAQ accordion</li>
-      <li>Responsif dari 360px, mendukung <em>prefers-reduced-motion</em></li>
-      <li>SEO dasar: meta description, Open Graph, dan JSON-LD LocalBusiness</li>
-    </ul>
-
-    <h3 class="modal-subtitle">Teknologi</h3>
-    <ul class="chips chips--sm">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Single file</li>
-    </ul>
-
-    <a class="btn btn--primary modal-cta" href="proyek/ngeps/index.html" target="_blank" rel="noopener">
-      Buka Website NgePS
-      <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="NgePS, beranda">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7.5 8h9a4.5 4.5 0 0 1 4.4 3.7l.9 5a2.7 2.7 0 0 1-4.7 2.2L15.4 17H8.6l-1.7 1.9A2.7 2.7 0 0 1 2.2 16.7l.9-5A4.5 4.5 0 0 1 7.5 8Z"/>
+          <path d="M7 10.5v4M5 12.5h4M16.5 11.5h.01M18.5 13.5h.01"/>
+        </svg>
+      </span>
+      <span class="logo-text">Nge<b>PS</b></span>
     </a>
 
-    <p class="modal-note">
-      Demo ikut tersimpan di dalam folder portofolio, jadi tetap bisa dibuka setelah
-      situs diunggah ke GitHub Pages.
-    </p>
-  </template>
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="#paket">Paket</a>
+      <a href="#fasilitas">Fasilitas</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#lokasi">Lokasi</a>
+      <a href="#faq">FAQ</a>
+    </nav>
 
-  <script src="script.js"></script>
+    <div class="nav-actions">
+      <a class="btn btn-lime btn-sm" href="#booking">Booking</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#paket">Paket &amp; harga</a>
+    <a href="#fasilitas">Fasilitas</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#lokasi">Lokasi</a>
+    <a href="#faq">FAQ</a>
+    <a href="#booking">Booking sekarang â†’</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow reveal"><span class="pulse"></span> Buka 24 jam Â· Jakarta Selatan</div>
+          <h1 class="reveal" style="--d:.05s">Mabar seru,<br>harga tetap <span class="grad">santai</span>.</h1>
+          <p class="lead reveal" style="--d:.1s">
+            Rental PS4 &amp; PS5 dengan ruang ber-AC, sofa empuk, dan 50+ game terbaru. Booking cukup lewat WhatsApp â€” datang, duduk, langsung main.
+          </p>
+          <div class="hero-cta reveal" style="--d:.16s">
+            <a class="btn btn-lime" href="#booking">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.3.1-.4l.6-.7c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.8 2.5.2 1.3 1 2.6 2.6 4.2 2 2 3.6 2.4 4.9 2.5.8.1 1.7-.2 2.3-.8.2-.2.3-.5.3-.7v-.5c0-.2 0-.4-.4-.6Z"/></svg>
+              Booking via WhatsApp
+            </a>
+            <a class="btn btn-ghost" href="#paket">
+              Lihat paket
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+            </a>
+          </div>
+          <div class="hero-trust reveal" style="--d:.22s">
+            <span>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+              <b>4.9/5</b> Â· 320+ ulasan
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-7h6v7"/></svg>
+              12 ruang private
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+              PS5 &amp; PS4
+            </span>
+          </div>
+        </div>
+
+        <div class="stage reveal" style="--d:.18s" aria-hidden="true">
+          <div class="stage-glow"></div>
+
+          <div class="tv">
+            <div class="tv-frame">
+              <div class="screen">
+                <div class="sun"></div>
+                <div class="floor"></div>
+                <div class="screen-hud">
+                  <div class="hud-row">
+                    <span class="hud-pill">Player 1</span>
+                    <span class="hud-pill">4K Â· 120Hz</span>
+                  </div>
+                  <div class="hud-bar"><i></i></div>
+                </div>
+                <div class="screen-title">GAME<span>ON</span></div>
+                <div class="scan"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="console"></div>
+
+          <svg class="pad" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M34 20h52a18 18 0 0 1 17.6 14.8l5.2 26a10 10 0 0 1-17.6 8.2L80 57H40l-11.2 12A10 10 0 0 1 11.2 60.8l5.2-26A18 18 0 0 1 34 20Z"/>
+            <path d="M32 35v14M25 42h14M84 38h.01M92 46h.01"/>
+          </svg>
+
+          <div class="chip chip-a">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M4.9 6.9l14.2 10.2M19.1 6.9 4.9 17.1M2 12h20"/></svg>
+            AC dingin 22Â°C
+          </div>
+          <div class="chip chip-b">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.5a15 15 0 0 1 19 0M5.5 12a10.5 10.5 0 0 1 13 0M8.5 15.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19" r="1.4" fill="currentColor"/></svg>
+            WiFi 100 Mbps
+          </div>
+          <div class="chip chip-c">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.6 6.1.8-4.5 4.3 1.2 6.1L12 16.9 6.6 19.8l1.2-6.1L3.3 9.4l6.1-.8L12 3Z"/></svg>
+            4.9 rating
+          </div>
+        </div>
+      </div>
+
+      <div class="stats reveal">
+        <div><b data-count="5" data-suffix=" thn">0</b><span>Pengalaman</span></div>
+        <div><b data-count="12">0</b><span>Ruang private</span></div>
+        <div><b data-count="50" data-suffix="+">0</b><span>Judul game</span></div>
+        <div><b data-count="4.9" data-decimals="1" data-suffix="/5">0</b><span>Rating pelanggan</span></div>
+      </div>
+    </div>
+  </section>
+  <!-- PAKET -->
+  <section class="sec" id="paket" style="padding-top:56px">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow-line">Paket &amp; harga</span>
+        <h2>Pilih ruang, tentukan jamnya.</h2>
+        <p>Semua paket sudah termasuk stik, game, AC, dan WiFi. Nggak ada biaya tambahan diam-diam.</p>
+      </div>
+
+      <div class="price-top reveal">
+        <div class="day-toggle" role="group" aria-label="Pilih hari">
+          <button type="button" data-day="wd" aria-pressed="true">Hari biasa</button>
+          <button type="button" data-day="we" aria-pressed="false">Weekend</button>
+        </div>
+        <p class="price-note">Harga per jam Â· Weekend = Jumatâ€“Minggu &amp; hari libur</p>
+      </div>
+
+      <div class="plans">
+        <article class="plan reveal">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 8h9a4.5 4.5 0 0 1 4.4 3.7l.9 5a2.7 2.7 0 0 1-4.7 2.2L15.4 17H8.6l-1.7 1.9A2.7 2.7 0 0 1 2.2 16.7l.9-5A4.5 4.5 0 0 1 7.5 8Z"/><path d="M7 10.5v4M5 12.5h4M16.5 11.5h.01M18.5 13.5h.01"/></svg>
+            Reguler
+          </h3>
+          <p class="plan-sub">PS4 Slim Â· pas buat mabar berdua</p>
+          <div class="amount"><span class="rp">Rp</span><b data-price="reguler">15rb</b><span class="per">/jam</span></div>
+          <p class="amount-note">Minimal 1 jam Â· bisa perpanjang</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>PS4 Slim + 2 stik</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>TV LED 43 inci</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Ruang ber-AC</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sofa 3 orang</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Bebas pilih game</li>
+          </ul>
+          <a class="btn btn-ghost" href="#booking" data-plan-link="reguler">Pilih Reguler</a>
+        </article>
+
+        <article class="plan hot reveal" style="--d:.07s">
+          <span class="plan-tag">Paling laris</span>
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h12M7 6h10a3 3 0 0 1 3 3v6H4V9a3 3 0 0 1 3-3Z"/><path d="M9 6V4h6v2"/></svg>
+            VIP
+          </h3>
+          <p class="plan-sub">PS5 Â· rasa konsol generasi baru</p>
+          <div class="amount"><span class="rp">Rp</span><b data-price="vip">25rb</b><span class="per">/jam</span></div>
+          <p class="amount-note">Rekomendasi buat mabar 4 orang</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>PS5 + 2 DualSense</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>TV 4K 55 inci 120Hz</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Ruang private lebih luas</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Headset gaming</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Snack + air mineral</li>
+          </ul>
+          <a class="btn btn-lime" href="#booking" data-plan-link="vip">Pilih VIP</a>
+        </article>
+
+        <article class="plan reveal" style="--d:.14s">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M5 16l5-2M19 16l-5-2"/></svg>
+            Sultan
+          </h3>
+          <p class="plan-sub">PS5 + racing rig Â· buat yang serius</p>
+          <div class="amount"><span class="rp">Rp</span><b data-price="sultan">40rb</b><span class="per">/jam</span></div>
+          <p class="amount-note">Cocok buat sesi panjang &amp; konten</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>PS5 + setir &amp; pedal</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>TV 4K 65 inci 120Hz</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Racing rig lengkap</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Soundbar + ruang paling private</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Snack + minuman dingin</li>
+          </ul>
+          <a class="btn btn-ghost" href="#booking" data-plan-link="sultan">Pilih Sultan</a>
+        </article>
+      </div>
+
+      <div class="promo reveal">
+        <p><span class="tagline">Promo minggu ini</span><br><b>Main 5 jam, gratis 1 jam.</b> Otomatis berlaku di hari biasa â€” tinggal bilang ke kasir.</p>
+        <a class="btn btn-ghost btn-sm" href="#booking">Hitung dulu â†’</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FASILITAS -->
+  <section class="sec" id="fasilitas" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow-line">Fasilitas</span>
+        <h2>Datang cuma bawa diri.</h2>
+        <p>Semua yang kamu butuhkan buat sesi mabar yang nyaman sudah kami siapkan.</p>
+      </div>
+
+      <div class="facilities">
+        <div class="facility reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 2v20M4.9 6.9l14.2 10.2M19.1 6.9 4.9 17.1M2 12h20"/></svg></div>
+          <h3>AC dingin</h3>
+          <p>Ruang full AC, suhu stabil 22Â°C.</p>
+        </div>
+        <div class="facility reveal" style="--d:.04s">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.5a15 15 0 0 1 19 0M5.5 12a10.5 10.5 0 0 1 13 0M8.5 15.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19" r="1.4" fill="currentColor"/></svg></div>
+          <h3>WiFi 100 Mbps</h3>
+          <p>Ping rendah buat game online.</p>
+        </div>
+        <div class="facility reveal" style="--d:.08s">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg></div>
+          <h3>50+ judul game</h3>
+          <p>Dari FC 25 sampai Elden Ring.</p>
+        </div>
+        <div class="facility reveal" style="--d:.12s">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2.5" y="13" width="4" height="7" rx="2"/><rect x="17.5" y="13" width="4" height="7" rx="2"/></svg></div>
+          <h3>Headset gaming</h3>
+          <p>Dengar lawan sebelum mereka lihat kamu.</p>
+        </div>
+        <div class="facility reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11V8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3"/><path d="M3 13a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4Z"/><path d="M7 21v-2M17 21v-2"/></svg></div>
+          <h3>Sofa empuk</h3>
+          <p>Bisa rebahan, nggak pegal.</p>
+        </div>
+        <div class="facility reveal" style="--d:.04s">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9.5 16V8h2.6a2.7 2.7 0 0 1 0 5.4H9.5"/></svg></div>
+          <h3>Parkir luas</h3>
+          <p>Motor &amp; mobil, aman dan gratis.</p>
+        </div>
+        <div class="facility reveal" style="--d:.08s">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></div>
+          <h3>Snack &amp; minuman</h3>
+          <p>Indomie, kopi, dan minuman dingin.</p>
+        </div>
+        <div class="facility reveal" style="--d:.12s">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M6 5v9a6 6 0 0 0 12 0V5M9 20h6"/></svg></div>
+          <h3>Boleh bawa makanan</h3>
+          <p>Mabar sambil makan bareng, boleh.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- GALERI -->
+  <section class="sec" id="galeri" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow-line">Galeri</span>
+        <h2>Ruangnya seperti ini.</h2>
+        <p>Bersih, wangi, dan siap dipakai. Silakan cek langsung sebelum booking kalau masih ragu.</p>
+      </div>
+
+      <!-- GANTI FOTO: tukar <div class="photo ..."> dengan <img src="foto-ruang.jpg" alt="..."> -->
+      <div class="gallery">
+        <div class="photo p1 reveal">
+          <svg class="art" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="6" width="126" height="76" rx="7"/><path d="M51 106h40M71 82v24"/><rect x="150" y="34" width="20" height="56" rx="9"/><path d="M158 44v18"/></svg>
+          <div class="meta">
+            <span>PS4 Â· 4 orang</span>
+            <h3>Ruang Reguler</h3>
+            <p>Sofa empuk, TV 43 inci, AC dingin.</p>
+          </div>
+        </div>
+        <div class="photo p2 reveal" style="--d:.06s">
+          <svg class="art" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M58 34h84a22 22 0 0 1 21.5 18l7.2 36.5a11 11 0 0 1-19.4 9L138 84H62l-13.3 13.5a11 11 0 0 1-19.4-9L36.5 52A22 22 0 0 1 58 34Z"/><path d="M55 54v18M46 63h18M134 57h.01M144 67h.01"/></svg>
+          <div class="meta">
+            <span>PS5 Â· 4K</span>
+            <h3>Ruang VIP</h3>
+            <p>Lebih luas, lebih private.</p>
+          </div>
+        </div>
+        <div class="photo p3 reveal" style="--d:.12s">
+          <svg class="art" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="100" cy="62" r="46"/><circle cx="100" cy="62" r="15"/><path d="M100 47V16M88 70 62 98M112 70l26 28"/></svg>
+          <div class="meta">
+            <span>PS5 Â· Racing</span>
+            <h3>Racing Rig</h3>
+            <p>Setir, pedal, dan layar 65 inci.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAMES -->
+  <section class="games-strip" style="margin-top:0;padding-top:0">
+    <div style="padding:34px 0">
+      <p class="games-label">50+ judul game, terus bertambah</p>
+      <div class="marquee" aria-label="Daftar game populer">
+        <div class="track">
+          <div class="group">
+            <span class="game"><i></i>EA FC 25</span>
+            <span class="game"><i></i>GTA V</span>
+            <span class="game"><i></i>Tekken 8</span>
+            <span class="game"><i></i>Mortal Kombat 1</span>
+            <span class="game"><i></i>Spider-Man 2</span>
+            <span class="game"><i></i>God of War RagnarÃ¶k</span>
+            <span class="game"><i></i>Gran Turismo 7</span>
+            <span class="game"><i></i>NBA 2K25</span>
+            <span class="game"><i></i>Elden Ring</span>
+            <span class="game"><i></i>Call of Duty</span>
+            <span class="game"><i></i>It Takes Two</span>
+            <span class="game"><i></i>UFC 5</span>
+            <span class="game"><i></i>Resident Evil 4</span>
+            <span class="game"><i></i>Minecraft</span>
+          </div>
+          <div class="group" aria-hidden="true">
+            <span class="game"><i></i>EA FC 25</span>
+            <span class="game"><i></i>GTA V</span>
+            <span class="game"><i></i>Tekken 8</span>
+            <span class="game"><i></i>Mortal Kombat 1</span>
+            <span class="game"><i></i>Spider-Man 2</span>
+            <span class="game"><i></i>God of War RagnarÃ¶k</span>
+            <span class="game"><i></i>Gran Turismo 7</span>
+            <span class="game"><i></i>NBA 2K25</span>
+            <span class="game"><i></i>Elden Ring</span>
+            <span class="game"><i></i>Call of Duty</span>
+            <span class="game"><i></i>It Takes Two</span>
+            <span class="game"><i></i>UFC 5</span>
+            <span class="game"><i></i>Resident Evil 4</span>
+            <span class="game"><i></i>Minecraft</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="sec" id="booking">
+    <div class="wrap booking-grid">
+      <div class="reveal">
+        <span class="eyebrow-line">Booking</span>
+        <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem);margin-top:14px">Hitung dulu,<br>baru mabar.</h2>
+        <p style="color:var(--muted);margin-top:16px;max-width:44ch">Pilih paket dan durasi, lihat estimasi biayanya, lalu kirim langsung ke WhatsApp kami. Nggak perlu daftar akun.</p>
+
+        <ol class="steps">
+          <li><b>01</b><span><strong>Chat &amp; konfirmasi</strong>Kirim estimasi booking â€” kami cek ketersediaan ruang.</span></li>
+          <li><b>02</b><span><strong>Datang 10 menit lebih awal</strong>Tunjukkan pesan WhatsApp, pilih game, langsung main.</span></li>
+          <li><b>03</b><span><strong>Bayar di tempat</strong>Cash, QRIS, atau transfer. Selesai, tinggal lanjut sesi berikutnya.</span></li>
+        </ol>
+      </div>
+
+      <div class="calc reveal" style="--d:.08s">
+        <h3>Estimasi booking</h3>
+        <p class="calc-sub">Harga final dikonfirmasi lewat chat.</p>
+
+        <div class="field">
+          <label for="planSelect">Pilih paket</label>
+          <div class="select-wrap">
+            <select id="planSelect">
+              <option value="reguler">Reguler Â· PS4 Â· 2 stik</option>
+              <option value="vip" selected>VIP Â· PS5 Â· 4K</option>
+              <option value="sultan">Sultan Â· PS5 + racing rig</option>
+            </select>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="hoursVal">Durasi</label>
+          <div class="stepper">
+            <button type="button" id="minusBtn" aria-label="Kurangi durasi" disabled>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14"/></svg>
+            </button>
+            <span class="val"><span id="hoursVal">2</span><small>jam</small></span>
+            <button type="button" id="plusBtn" aria-label="Tambah durasi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="calc-total">
+          <span id="totalLabel">Estimasi Â· Hari biasa</span>
+          <b id="totalPrice">Rp50.000</b>
+        </div>
+        <p class="calc-note">Belum termasuk snack &amp; minuman.</p>
+
+        <a class="btn btn-lime" id="calcWa" href="https://wa.me/6287789734353" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.3.1-.4l.6-.7c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.8 2.5.2 1.3 1 2.6 2.6 4.2 2 2 3.6 2.4 4.9 2.5.8.1 1.7-.2 2.3-.8.2-.2.3-.5.3-.7v-.5c0-.2 0-.4-.4-.6Z"/></svg>
+          Booking via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- TESTIMONI -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow-line">Kata mereka</span>
+        <h2>Sudah pada mabar.</h2>
+      </div>
+
+      <div class="quotes">
+        <article class="quote reveal">
+          <div class="stars" aria-label="5 dari 5 bintang">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+          </div>
+          <p>"Ruang VIP-nya bersih banget, AC-nya dingin, dan PS5-nya mulus. Booking lewat WA juga cepat dibalas. Langganan terus sih ini."</p>
+          <div class="person">
+            <span class="avatar">R</span>
+            <span><b>Rizky Pratama</b><span>Mahasiswa Â· Tebet</span></span>
+          </div>
+        </article>
+
+        <article class="quote reveal" style="--d:.06s">
+          <div class="stars" aria-label="5 dari 5 bintang">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+          </div>
+          <p>"Nggak nyangka harganya segini tapi fasilitasnya lengkap. Anak-anak senang, bisa bawa snack juga. Tempatnya gampang dicari."</p>
+          <div class="person">
+            <span class="avatar" style="background:linear-gradient(140deg,#9db9ff,#8b5cf6);color:#fff">N</span>
+            <span><b>Nadia Sari</b><span>Ibu dua anak Â· Kemang</span></span>
+          </div>
+        </article>
+
+        <article class="quote reveal" style="--d:.12s">
+          <div class="stars" aria-label="5 dari 5 bintang">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9L12 2.5Z"/></svg>
+          </div>
+          <p>"Racing rig-nya beneran seru. Setir dan pedalnya responsif, layarnya besar. Buat main Gran Turismo sampai tengah malam, puas."</p>
+          <div class="person">
+            <span class="avatar" style="background:linear-gradient(140deg,#c9ff4d,#22d3ee)">B</span>
+            <span><b>Bagas Wijaya</b><span>Content creator Â· Pasar Minggu</span></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOKASI -->
+  <section class="sec" id="lokasi" style="padding-top:0">
+    <div class="wrap">
+      <div class="loc reveal">
+        <div class="loc-info">
+          <span class="eyebrow-line">Lokasi</span>
+          <h2 style="margin-top:12px">Mampir, langsung main.</h2>
+          <p>5 menit dari Stasiun Tebet. Ada plang NgePS di depan, parkir gratis.</p>
+
+          <ul class="loc-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              <!-- ALAMAT: ganti dengan alamat asli -->
+              <span><b>Jl. Melati Raya No. 21</b><br>Jakarta Selatan 12810</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+              <!-- JAM BUKA -->
+              <span><b>Buka 24 jam</b><br>Setiap hari, termasuk hari libur</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+              <span><b>0877-8973-4353</b><br>WhatsApp &amp; telepon</span>
+            </li>
+          </ul>
+
+          <div class="loc-cta">
+            <a class="btn btn-lime" href="https://maps.google.com/?q=Jl.+Melati+Raya+No.+21+Jakarta+Selatan" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              Buka di Maps
+            </a>
+            <a class="btn btn-ghost" href="https://wa.me/6287789734353" target="_blank" rel="noopener">Chat dulu</a>
+          </div>
+        </div>
+
+        <div class="map" aria-hidden="true">
+          <div class="pin">
+            <span class="pin-ring"></span>
+            <span class="pin-ring"></span>
+            <span class="pin-dot"></span>
+            <span class="pin-label">NgePS Â· Tebet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow-line">FAQ</span>
+        <h2>Sebelum datang.</h2>
+      </div>
+
+      <div class="faq reveal">
+        <details open>
+          <summary>Perlu reservasi dulu? <span class="plus" aria-hidden="true"></span></summary>
+          <p>Disarankan, apalagi untuk weekend dan malam hari. Booking lewat WhatsApp supaya ruangmu pasti kosong saat datang. Walk-in tetap dilayani kalau masih ada ruang.</p>
+        </details>
+        <details>
+          <summary>Satu ruang untuk berapa orang? <span class="plus" aria-hidden="true"></span></summary>
+          <p>Ruang Reguler nyaman untuk 3â€“4 orang, VIP untuk 4â€“6 orang, dan Racing Rig ideal untuk 1â€“2 orang. Boleh bawa teman nonton, kok.</p>
+        </details>
+        <details>
+          <summary>Bisa bawa makanan dan minuman? <span class="plus" aria-hidden="true"></span></summary>
+          <p>Boleh banget. Kami juga menyediakan snack, Indomie, kopi, dan minuman dingin kalau kamu mau pesan di tempat.</p>
+        </details>
+        <details>
+          <summary>Metode pembayarannya apa saja? <span class="plus" aria-hidden="true"></span></summary>
+          <p>Cash, QRIS, dan transfer bank. Pembayaran dilakukan di tempat setelah sesi selesai, atau di awal untuk booking jam tertentu.</p>
+        </details>
+        <details>
+          <summary>Ada paket malam atau sesi panjang? <span class="plus" aria-hidden="true"></span></summary>
+          <p>Ada. Paket 5 jam dapat bonus 1 jam di hari biasa, dan tersedia paket malam 22.00â€“06.00. Tanyakan harga terbarunya lewat WhatsApp.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="wrap">
+    <div class="cta reveal">
+      <h2>Ruang sudah kosong. Stik sudah siap.</h2>
+      <p>Tinggal pilih jamnya. Kami simpan ruangmu, kamu tinggal datang dan main.</p>
+      <div class="hero-cta">
+        <a class="btn btn-lime" href="https://wa.me/6287789734353" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.3.1-.4l.6-.7c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.8 2.5.2 1.3 1 2.6 2.6 4.2 2 2 3.6 2.4 4.9 2.5.8.1 1.7-.2 2.3-.8.2-.2.3-.5.3-.7v-.5c0-.2 0-.4-.4-.6Z"/></svg>
+          Booking sekarang
+        </a>
+        <a class="btn btn-ghost" href="#paket">Cek harga lagi</a>
+      </div>
+      <div class="hero-trust">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          Balasan cepat, jam 10.00â€“02.00
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Tanpa DP untuk booking di hari biasa
+        </span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo" aria-label="NgePS, beranda">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7.5 8h9a4.5 4.5 0 0 1 4.4 3.7l.9 5a2.7 2.7 0 0 1-4.7 2.2L15.4 17H8.6l-1.7 1.9A2.7 2.7 0 0 1 2.2 16.7l.9-5A4.5 4.5 0 0 1 7.5 8Z"/>
+              <path d="M7 10.5v4M5 12.5h4M16.5 11.5h.01M18.5 13.5h.01"/>
+            </svg>
+          </span>
+          <span class="logo-text">Nge<b>PS</b></span>
+        </a>
+        <p>Rental PS4 &amp; PS5 di Jakarta Selatan. Ruang private, AC dingin, 50+ game. Buka 24 jam.</p>
+        <div class="social">
+          <a href="https://wa.me/6287789734353" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+          <a href="https://maps.google.com/?q=Jl.+Melati+Raya+No.+21+Jakarta+Selatan" target="_blank" rel="noopener" aria-label="Lokasi di Google Maps">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Navigasi</h4>
+        <a href="#paket">Paket &amp; harga</a>
+        <a href="#fasilitas">Fasilitas</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#booking">Booking</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Kontak</h4>
+        <a href="https://wa.me/6287789734353" target="_blank" rel="noopener">0877-8973-4353</a>
+        <a href="mailto:halo@ngeps.id">halo@ngeps.id</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">@ngeps.id</a>
+        <p>Jl. Melati Raya No. 21<br>Jakarta Selatan</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Jam buka</h4>
+        <p>Seninâ€“Minggu<br><b style="color:var(--lime)">24 jam nonstop</b></p>
+        <p style="margin-top:10px">Booking disarankan untuk<br>Jumatâ€“Minggu malam.</p>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>Â© 2026 NgePS. Semua harga dapat berubah tanpa pemberitahuan.</span>
+      <span>Dibuat untuk para mabar sejati ðŸŽ®</span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/6287789734353" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.3.1-.4l.6-.7c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.7.7-.9 1.6-.8 2.5.2 1.3 1 2.6 2.6 4.2 2 2 3.6 2.4 4.9 2.5.8.1 1.7-.2 2.3-.8.2-.2.3-.5.3-.7v-.5c0-.2 0-.4-.4-.6Z"/></svg>
+</a>
+
+<div class="mobile-bar">
+  <div><small>Mulai dari</small><b>Rp15rb/jam</b></div>
+  <a class="btn btn-lime" href="#booking">Booking</a>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "NgePS Rental PlayStation",
+  "description": "Rental PS4 & PS5 di Jakarta Selatan. Ruang private ber-AC, 50+ game, buka 24 jam.",
+  "telephone": "+62-812-3456-7890",
+  "priceRange": "Rp15.000 - Rp50.000 per jam",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Melati Raya No. 21",
+    "addressLocality": "Jakarta Selatan",
+    "addressRegion": "DKI Jakarta",
+    "postalCode": "12810",
+    "addressCountry": "ID"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+}
+</script>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ============================================================
+     GANTI NOMOR WHATSAPP DI SINI (format 62..., tanpa + dan spasi)
+     ============================================================ */
+  var WA_NUMBER = "6287789734353";
+
+  /* Harga per jam (dalam rupiah) â€” ubah di sini */
+  var PRICES = {
+    reguler: { wd: 15000, we: 20000 },
+    vip:     { wd: 25000, we: 30000 },
+    sultan:  { wd: 40000, we: 50000 }
+  };
+  var PLAN_LABEL = {
+    reguler: "Reguler (PS4)",
+    vip: "VIP (PS5)",
+    sultan: "Sultan (PS5 + Racing Rig)"
+  };
+
+  var state = { day: "wd", plan: "vip", hours: 2 };
+
+  var fmtRp = function (n) {
+    return "Rp" + new Intl.NumberFormat("id-ID").format(n);
+  };
+  var fmtShort = function (n) {
+    return "Rp" + (n / 1000) + "rb";
+  };
+  var waLink = function (msg) {
+    return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
+  };
+
+  var priceEls = document.querySelectorAll("[data-price]");
+  var planSelect = document.getElementById("planSelect");
+  var hoursEl = document.getElementById("hoursVal");
+  var totalEl = document.getElementById("totalPrice");
+  var totalLabel = document.getElementById("totalLabel");
+  var minusBtn = document.getElementById("minusBtn");
+  var plusBtn = document.getElementById("plusBtn");
+  var calcWa = document.getElementById("calcWa");
+
+  function render() {
+    var price = PRICES[state.plan][state.day];
+
+    priceEls.forEach(function (el) {
+      var key = el.getAttribute("data-price");
+      if (PRICES[key]) el.textContent = fmtShort(PRICES[key][state.day]);
+    });
+
+    hoursEl.textContent = String(state.hours);
+    minusBtn.disabled = state.hours <= 1;
+    plusBtn.disabled = state.hours >= 8;
+
+    totalEl.textContent = fmtRp(price * state.hours);
+    totalLabel.textContent = "Estimasi Â· " + (state.day === "we" ? "Weekend" : "Hari biasa");
+
+    calcWa.href = waLink(
+      "Halo NgePS! Saya mau booking rental PS.\n\n" +
+      "Paket: " + PLAN_LABEL[state.plan] + "\n" +
+      "Hari: " + (state.day === "we" ? "Weekend" : "Hari biasa") + "\n" +
+      "Durasi: " + state.hours + " jam\n" +
+      "Estimasi: " + fmtRp(price * state.hours) + "\n\n" +
+      "Masih ada ruang?"
+    );
+  }
+
+  /* toggle hari */
+  document.querySelectorAll("[data-day]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      state.day = btn.getAttribute("data-day");
+      document.querySelectorAll("[data-day]").forEach(function (b) {
+        b.setAttribute("aria-pressed", String(b === btn));
+      });
+      render();
+    });
+  });
+
+  /* pilih paket dari kartu harga */
+  document.querySelectorAll("[data-plan-link]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      var key = link.getAttribute("data-plan-link");
+      if (PRICES[key]) {
+        state.plan = key;
+        planSelect.value = key;
+        render();
+      }
+    });
+  });
+
+  planSelect.addEventListener("change", function () {
+    state.plan = planSelect.value;
+    render();
+  });
+
+  minusBtn.addEventListener("click", function () {
+    if (state.hours > 1) { state.hours--; render(); }
+  });
+  plusBtn.addEventListener("click", function () {
+    if (state.hours < 8) { state.hours++; render(); }
+  });
+
+  /* semua tombol WhatsApp dapat pesan default */
+  var defaultMsg = "Halo NgePS! Saya mau tanya soal rental PS. Masih ada ruang untuk hari ini?";
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) {
+    if (a.id !== "calcWa") a.href = waLink(defaultMsg);
+  });
+
+  render();
+
+  /* ---------- header ---------- */
+  var header = document.getElementById("header");
+  var onScroll = function () {
+    header.classList.toggle("scrolled", window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  /* ---------- mobile menu ---------- */
+  var menuBtn = document.getElementById("menuBtn");
+  var mobileMenu = document.getElementById("mobileMenu");
+  menuBtn.addEventListener("click", function () {
+    var open = mobileMenu.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", String(open));
+  });
+  mobileMenu.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") {
+      mobileMenu.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  /* ---------- reveal ---------- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---------- counters ---------- */
+  var counters = document.querySelectorAll("[data-count]");
+  var animate = function (el) {
+    var target = parseFloat(el.getAttribute("data-count"));
+    var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+    var suffix = el.getAttribute("data-suffix") || "";
+    var start = null;
+    var tick = function (ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / 1400, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var value = target * eased;
+      el.textContent = new Intl.NumberFormat("id-ID", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      }).format(value) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  if ("IntersectionObserver" in window) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animate(entry.target);
+          cio.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) { cio.observe(el); });
+  } else {
+    counters.forEach(animate);
+  }
+})();
+</script>
+
 </body>
 </html>
