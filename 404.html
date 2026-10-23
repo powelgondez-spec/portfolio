@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0a1626">
+  <title>Halaman tidak ditemukan — Andreas Powel Sinaga</title>
+  <style>
+    :root {
+      --ink: #0a1626;
+      --emerald: #34d399;
+      --emerald-ink: #0a8055;
+      --muted: #9fb0c2;
+      --line: rgba(255, 255, 255, .14);
+      --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px;
+      background: radial-gradient(90% 70% at 80% 0%, #123a52 0%, var(--ink) 55%);
+      color: #fff;
+      font-family: var(--font);
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .card { max-width: 620px; }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      margin-bottom: 2rem;
+      font-size: .95rem;
+      font-weight: 700;
+      color: #dbe7ef;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: linear-gradient(140deg, #10b981, #057a52);
+      color: #fff;
+      font-weight: 800;
+      font-size: .9rem;
+    }
+
+    .code {
+      margin: 0;
+      font-size: clamp(5rem, 18vw, 9rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.06em;
+      background: linear-gradient(120deg, #6ee7b7, #34d399 45%, #2dd4bf);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    h1 { margin: 1rem 0 .6rem; font-size: clamp(1.4rem, 3.6vw, 1.9rem); letter-spacing: -.02em; }
+
+    p { margin: 0 auto; max-width: 44ch; color: var(--muted); font-size: .98rem; }
+
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 2rem; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      padding: .8rem 1.25rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: .92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color .2s, border-color .2s, transform .2s;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn--primary { background: #0a8055; color: #fff; }
+    .btn--primary:hover { background: #0b8f5f; }
+
+    .btn--ghost { border-color: var(--line); color: #fff; }
+    .btn--ghost:hover { background: rgba(255, 255, 255, .08); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn { transition: none; }
+      .btn:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <a class="brand" href="/portfolio/" id="home-link">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      Andreas Powel Sinaga
+    </a>
+
+    <p class="code" aria-hidden="true">404</p>
+    <h1>Halaman yang kamu cari tidak ada</h1>
+    <p>
+      Mungkin alamatnya salah ketik, atau halamannya sudah dipindahkan. Kamu bisa
+      kembali ke beranda atau langsung bertanya lewat WhatsApp.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn--primary" href="/portfolio/" id="home-btn">Kembali ke beranda</a>
+      <a class="btn btn--ghost" href="https://wa.me/6287789734353?text=Halo%20Andreas%2C%20saya%20mau%20tanya%20soal%20pembuatan%20website." target="_blank" rel="noopener">Chat WhatsApp</a>
+    </div>
+  </main>
+
+  <script>
+    // Saat dibuka langsung dari file lokal, arahkan ke index.html di folder yang sama.
+    if (location.protocol === 'file:') {
+      document.getElementById('home-link').href = 'index.html';
+      document.getElementById('home-btn').href = 'index.html';
+    }
+  </script>
+</body>
+</html>

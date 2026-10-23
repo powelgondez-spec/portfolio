@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://powelgondez-spec.github.io/portfolio/sitemap.xml
